@@ -64,14 +64,14 @@ body {
     top: 50%;
     left: 0;
     transform: translateY(-50%) rotate(-90deg);
-    margin-left: -25px; /* Pas de marge pour la gauche */
+    margin-left: -15px; /* Pas de marge pour la gauche */
 }
 
 .right-center {
     top: 50%;
     right: 0;
     transform: translateY(-50%) rotate(90deg);
-    margin-right: -25px; /* Pas de marge pour la droite */
+    margin-right: -15px; /* Pas de marge pour la droite */
 }
 
 
@@ -84,10 +84,10 @@ body {
 }
 
 .logo img {
-    width: 45px; /* Ajustez la taille du logo */
-    height: 45px; /* Garde les proportions du logo */
-    margin-top: 35px;
-    margin-left: 15px;
+    width: 55px; /* Ajustez la taille du logo */
+    height: 55px; /* Garde les proportions du logo */
+    margin-top: 45px;
+    margin-left: 35px;
 }
 
 .home {
@@ -113,10 +113,45 @@ body {
     z-index: -1; /* Place la vidéo derrière le texte */
 }
 
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    display: flex; /* Utilise Flexbox pour la disposition */
+    flex-direction: column; /* Aligne les éléments en colonne (verticalement) */
+    align-items: center; /* Centre les éléments horizontalement */
+    justify-content: center; /* Centre les éléments verticalement */
+    z-index: 1;
+}
+
 .home h1 {
-    margin: 0;
-    padding: 0 20px; /* Ajoute un léger espacement pour respirer */
-    font-size: 90px; /* Ajuste la taille de la police selon les besoins */
-    color: #fff; /* Assure que le texte est bien visible sur le fond sombre */
-    line-height: 1.5; /* Ajuste l'espacement entre les lignes */
+    font-size: 100px;
+    color: transparent;
+    line-height: 1.5;
+    z-index: 1;
+    background-image: url('images/fond\ text.jpg'); /* Chemin de l'image pour le texte */
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-repeat: no-repeat;
+}
+
+@keyframes changeTextH2 {
+    0% { content: "Web Designer"; }
+    33% { content: "Developpeur Web"; }
+    66% { content: "Graphiste"; }
+    100% { content: "Illustrateur"; }
+}
+
+.home h2::after {
+    display: inline-block;
+    content: "Web Designer"; /* Contenu initial */
+    animation: changeTextH2 10s infinite; /* Animation de 10s en boucle infinie */
+    font-size: 40px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
 }
