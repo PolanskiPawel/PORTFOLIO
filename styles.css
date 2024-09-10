@@ -132,7 +132,7 @@ body {
     color: transparent;
     line-height: 1.5;
     z-index: 1;
-    background-image: url('images/fond\ text.jpg'); /* Chemin de l'image pour le texte */
+    background-image: url('images/fond text.jpg'); /* Chemin de l'image pour le texte */
     background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;
