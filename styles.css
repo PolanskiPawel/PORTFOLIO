@@ -76,18 +76,19 @@ body {
 
 
 
+/* Logo toujours au même endroit sur toutes les pages */
 .logo {
-    position: fixed; /* Fixe le logo en haut à gauche de l'écran */
-    top: 20px; /* Distance du bord supérieur */
-    left: 20px; /* Distance du bord gauche */
-    z-index: 3; /* Assure que le logo est au-dessus du menu */
+    position: fixed; /* Le logo reste fixe à un endroit */
+    top: 20px; /* Distance du haut de la page */
+    left: 20px; /* Distance du côté gauche de la page */
+    z-index: 10; /* Assure que le logo est au-dessus des autres éléments */
 }
 
 .logo img {
-    width: 55px; /* Ajustez la taille du logo */
-    height: 55px; /* Garde les proportions du logo */
-    margin-top: 45px;
-    margin-left: 35px;
+    width: 55px; /* Taille du logo */
+    height: 55px; /* Conserve les proportions du logo */
+    padding-top: 20px;
+    padding-left: 20px;
 }
 
 .home {
@@ -154,4 +155,165 @@ body {
     color: white;
     font-weight: 600;
     text-align: center;
+}
+
+/* Bouton flèche vers le bas */
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    z-index: 5; /* Assure que le bouton est visible par-dessus le contenu */
+}
+
+/* Section "À PROPOS" */
+.about {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    transition: top 0.5s ease-in-out;
+}
+
+.about.active {
+    top: 0;
+}
+
+/* Style du contenu de la section "À PROPOS" */
+.about h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 20px;
+    max-width: 600px;
+    text-align: center;
+}
+
+
+/* Styles des cases extérieures */
+.case-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1100px;
+    padding-top: 0px;
+}
+
+.case {
+    width: 500px;
+    background-color: #000000;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Styles pour l'intérieur de la seconde case */
+.inner-case-container {
+    display: flex;
+    flex-direction: column; /* Aligne les cases verticalement */
+    gap: 10px; /* Espace entre chaque case */
+    margin-top: 20px; /* Espace au-dessus des sous-cases */
+    align-items: flex-start;
+}
+
+.inner-case {
+    background-color: #000000; /* Couleur de fond pour chaque sous-case */
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+/* Ajustement sur mobile */
+@media (max-width: 1024px) {
+    .case-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .case {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Style pour h1 */
+.inner-case h1 {
+    font-size: 40px;
+    color: white;
+    margin: 0;
+}
+
+/* Style pour h2 */
+.inner-case h2 {
+    font-size: 15px;
+    color: #FCC443;
+    margin: 0;
+    margin-right: -127px;
+}
+
+.divider {
+    border-top: 2px solid white;
+    width: 100%;
+    margin: 10px auto;
+}
+
+.inner-case-des p {
+    text-align: start;
+    font-size: 15px;
+    color: #b7b7b7;
+    line-height: 22px;
+    margin-top: 30px;
+}
+
+
+.inner-case-button {
+    display: flex; /* Utilise Flexbox pour aligner les boutons horizontalement */
+    justify-content: center; /* Centre les boutons horizontalement */
+    margin-top: 30px; /* Espace au-dessus des boutons */
+    gap: 24px; /* Espace entre les boutons */
+}
+
+.button {
+    width: 200px; /* Largeur fixe pour tous les boutons */
+    height: 50px; /* Hauteur fixe pour tous les boutons */
+    padding: 0 20px; /* Padding uniquement horizontal */
+    font-size: 15px; /* Taille de la police */
+    color: white; /* Couleur du texte */
+    background-color: #FCC443; /* Couleur de fond */
+    border: none; /* Enlève la bordure par défaut */
+    cursor: pointer; /* Curseur pointer au survol */
+    transition: background-color 0.3s; /* Transition pour l'effet au survol */
+    font-weight: 600; /* Gras pour le texte */
+    text-decoration: none; /* Enlève le soulignement pour les liens */
+    display: inline-flex; /* Utilise inline-flex pour garder le style de bouton */
+    align-items: center; /* Centre le texte verticalement */
+    justify-content: center; /* Centre le texte horizontalement */
+    box-sizing: border-box; /* Inclut le padding dans la taille totale */
+}
+
+.button:first-child {
+    margin-right: 24px; /* Espace à droite du premier bouton */
+}
+
+.button:hover {
+    background-color: #e0a639; /* Couleur au survol */
 }
